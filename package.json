@@ -1,5 +1,5 @@
 {
-    "name": "powsapp",
+    "name": "whysapp",
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
@@ -10,8 +10,8 @@
         "build:mac": "electron-builder --mac"
     },
     "build": {
-        "appId": "kim.pow.powsapp",
-        "productName": "PowsApp (WhatsApp Desktop)",
+        "appId": "kim.pow.whysapp",
+        "productName": "WhysApp (WhatsApp Desktop)",
         "icon": "assets/icon",
         "win": {
             "target": [
@@ -35,7 +35,7 @@
             {
                 "provider": "github",
                 "owner": "kimmyxpow",
-                "repo": "powsapp",
+                "repo": "whysapp",
                 "releaseType": "release"
             }
         ]

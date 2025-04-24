@@ -1,21 +1,52 @@
 {
-    "name": "whysapp",
-    "private": true,
-    "version": "0.1.1",
-    "type": "module",
+    "name": "powsapp",
+    "version": "1.0.0",
+    "main": "index.js",
     "scripts": {
-        "dev": "vite",
-        "build": "tsc && vite build",
-        "preview": "vite preview",
-        "tauri": "tauri"
+        "start": "electron .",
+        "build": "electron-builder --win --mac --linux",
+        "build:win": "electron-builder --win",
+        "build:linux": "electron-builder --linux",
+        "build:mac": "electron-builder --mac"
     },
-    "dependencies": {
-        "@tauri-apps/api": "^2",
-        "@tauri-apps/plugin-opener": "^2"
+    "build": {
+        "appId": "kim.pow.powsapp",
+        "productName": "PowsApp (WhatsApp Desktop)",
+        "icon": "assets/icon",
+        "win": {
+            "target": [
+                "portable"
+            ],
+            "icon": "assets/icon.ico"
+        },
+        "mac": {
+            "target": [
+                "dmg"
+            ],
+            "icon": "assets/icon.icns"
+        },
+        "linux": {
+            "target": [
+                "AppImage"
+            ],
+            "icon": "assets/icon.png"
+        },
+        "publish": [
+            {
+                "provider": "github",
+                "owner": "kimmyxpow",
+                "repo": "powsapp",
+                "releaseType": "release"
+            }
+        ]
     },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "WhatsApp Desktop app built with Electron",
     "devDependencies": {
-        "@tauri-apps/cli": "^2",
-        "vite": "^6.0.3",
-        "typescript": "~5.6.2"
+        "dmg-license": "^1.0.11",
+        "electron": "^35.1.5",
+        "electron-builder": "^26.0.12"
     }
 }
